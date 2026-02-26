@@ -5,7 +5,7 @@
 <title>Sorteo KTM Duke</title>
 <style>
 body { font-family: Arial; text-align: center; background:#f4f4f4; }
-.numero { display:inline-block; width:50px; margin:5px; padding:10px; border-radius:5px; }
+.numero {  display:inline-block; width:55px;  margin:6px;  padding:12px;  border-radius:10px;  font-weight:bold;  box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 .disponible { background:green; color:white; }
 .ocupado { background:red; color:white; }
 </style>
@@ -47,7 +47,7 @@ for(let i=00;i<=99;i++){
     div.textContent = i;
   } else {
     div.classList.add("disponible");
-    div.textContent = i;
+    div.textContent = i.toString().padStart(2, '0');
   }
 
   cont.appendChild(div);
@@ -57,4 +57,5 @@ for(let i=00;i<=99;i++){
 </body>
 
 </html>
+
 
