@@ -3,61 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <title>Sorteo KTM Duke</title>
+
 <style>
-body { font-family: Arial; text-align: center; background:#f4f4f4; }
-.numero {  display:inline-block; width:55px;  margin:6px;  padding:12px;  border-radius:10px;  font-weight:bold;  box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-.disponible { background:green; color:white; }
-.ocupado { background:red; color:white; }
+body {
+  font-family: Arial;
+  text-align: center;
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+}
+
+h1, h2, p {
+  color: white;
+}
+
+.numero {
+  display:inline-block;
+  width:55px;
+  margin:6px;
+  padding:12px;
+  border-radius:10px;
+  font-weight:bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.disponible {
+  background:#111;
+  color:#ff7a18;
+}
+
+.ocupado {
+  background:#ff3b3b;
+  color:white;
+}
 </style>
 </head>
 
 <body>
 
-<img src="WhatsApp-Image-2026-02-01-at-8.37.59-PM.jpg" width="300" style="border-radius:10px; margin:15px;">
-<h1>🎉 Sorteo Oficial KTM Duke 390 2024 🎉</h1>
+<img src="WhatsApp-Image-2026-02-01-at-8.37.59-PM.jpg"
+     width="300"
+     style="border-radius:12px; margin:15px; border:3px solid white;">
+
+<h1>🏍️ Sorteo Oficial KTM Duke 390 2024 🧡</h1>
 
 <h2>Cuenta para pagos</h2>
+
 <p><b>Banco:</b> BBVA</p>
-<p><b>Cuenta:</b> 151 118 4525 </p>
+<p><b>Cuenta:</b> 151 118 4525</p>
 <p><b>Tarjeta:</b> 4152 3143 6080 1321</p>
-<p><b>Nombre:</b> Alonso Castro </p> 
-<p><b>Whatsapp:</b> 5591875986 </p>  
-<p> Todos los pagos realizados por transferencia enviar comprobante por Whatsapp </p>  
+<p><b>Nombre:</b> Alonso Castro</p>
+<p><b>WhatsApp:</b> 55 9187 5986</p>
 
-<p><b>Premio:</b> KTM Duke 390 2024 </p> 
-<p><b>Fecha del Sorteo:</b> 10 de Marzo 2026 </p> 
-<p><b>Precio por boleto/numero </b> $1,500.00 </p> 
+<p>📌 Enviar comprobante por WhatsApp</p>
 
-<p><b>Actualizado:</b> 26 de Febero 2026 5:00 PM </p> 
+<p><b>Premio:</b> KTM Duke 390 2024</p>
+<p><b>Fecha del sorteo:</b> 10 de Marzo 2026</p>
+<p><b>Precio por número:</b> $1,500 MXN</p>
+
+<p><b>Actualizado:</b> 26 de Febrero 2026 – 5:00 PM</p>
 
 <h2>Números</h2>
 
 <div id="numeros"></div>
 
 <script>
-let ocupados = [00,99]; // cambia aquí
+
+// AQUÍ PONES LOS VENDIDOS
+let ocupados = [0, 7, 12, 25, 99]; // ejemplo
 
 let cont = document.getElementById("numeros");
 
-for(let i=00;i<=99;i++){
+for(let i = 0; i <= 99; i++){
+
   let div = document.createElement("div");
   div.classList.add("numero");
 
+  // Mostrar siempre con 2 dígitos
+  let numTexto = i.toString().padStart(2,'0');
+
   if(ocupados.includes(i)){
     div.classList.add("ocupado");
-    div.textContent = i;
   } else {
     div.classList.add("disponible");
-    div.textContent = i.toString().padStart(2, '0');
   }
 
+  div.textContent = numTexto;
   cont.appendChild(div);
 }
 </script>
 
 </body>
-
 </html>
+
 
 
 
