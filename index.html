@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sorteo</title>
+<style>
+body { font-family: Arial; text-align: center; background:#f4f4f4; }
+.numero { display:inline-block; width:50px; margin:5px; padding:10px; border-radius:5px; }
+.disponible { background:green; color:white; }
+.ocupado { background:red; color:white; }
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Sorteo Oficial 🎉</h1>
+
+<h2>Cuenta para pagos</h2>
+<p><b>Banco:</b> BBVA</p>
+<p><b>Cuenta:</b> 1234567890</p>
+<p><b>CLABE:</b> 000000000000000000</p>
+
+<h2>Números</h2>
+
+<div id="numeros"></div>
+
+<script>
+let ocupados = [3,7,12,18,25]; // cambia aquí
+
+let cont = document.getElementById("numeros");
+
+for(let i=1;i<=50;i++){
+  let div = document.createElement("div");
+  div.classList.add("numero");
+
+  if(ocupados.includes(i)){
+    div.classList.add("ocupado");
+    div.textContent = i;
+  } else {
+    div.classList.add("disponible");
+    div.textContent = i;
+  }
+
+  cont.appendChild(div);
+}
+</script>
+
+</body>
+</html>
